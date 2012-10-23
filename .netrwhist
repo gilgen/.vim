@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/jgilgen/projects/sap'
-let g:netrw_dirhist_2='/Users/jgilgen/projects/sap/app'
-let g:netrw_dirhist_3='/Users/jgilgen/projects/sap/app/assets'
-let g:netrw_dirhist_4='/Users/jgilgen/projects/sap/app/assets/js'
-let g:netrw_dirhist_5='/Users/jgilgen/projects/sap/app/assets/js/sap'
-let g:netrw_dirhist_6='/Users/jgilgen/projects/sap/app/assets/js/sap/controllers'
-let g:netrw_dirhist_7='/Users/jgilgen/projects/sap'
