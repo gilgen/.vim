@@ -38,3 +38,5 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 " Show invisibles
 " set list
 " set listchars=tab:▸\ ,eol:¬
+
+set softtabstop=2 shiftwidth=2 expandtab
