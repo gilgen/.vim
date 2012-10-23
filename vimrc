@@ -16,7 +16,9 @@ colorscheme molokai
 set number
 
 " Set the right gutter to 80 characters 
-set colorcolumn=80
+if exists("&colorcolumn")
+  set colorcolumn=80 
+endif
 
 " Use standard two space tabs for coffeescript files
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
