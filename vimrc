@@ -10,7 +10,7 @@ filetype plugin indent on
 
 " Color scheme and font
 set guifont=inconsolata:h13
-colorscheme molokai
+colorscheme sunburst
 
 " Show line numbers
 set number
@@ -31,6 +31,9 @@ autocmd vimenter * if !argc() | NERDTree | endif
 
 " Convenience binding to open up ~/.vimrc
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+
+" Map nerdtree to <leader>nt
+nnoremap <leader>nt :NERDTreeToggle<cr>
 
 " Binding to strip all trailing whitespace from file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
