@@ -35,5 +35,6 @@ nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 " Binding to strip all trailing whitespace from file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
+" Show invisibles
 " set list
 " set listchars=tab:▸\ ,eol:¬

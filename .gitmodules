@@ -13,6 +13,3 @@
 [submodule "bundle/vim-peepopen"]
 	path = bundle/vim-peepopen
 	url = git://github.com/shemerey/vim-peepopen.git
-[submodule "bundle/yaml-vim"]
-	path = bundle/yaml-vim
-	url = git://github.com/ingydotnet/yaml-vim.git
