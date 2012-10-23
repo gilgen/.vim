@@ -10,7 +10,7 @@ filetype plugin indent on
 
 " Color scheme and font
 set guifont=inconsolata:h13
-colorscheme sunburst
+colorscheme Sunburst
 
 " Show line numbers
 set number
