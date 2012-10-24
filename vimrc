@@ -3,11 +3,7 @@ call pathogen#infect()
 syntax on
 
 " Make the nerdtree a bit wider
-let g:NERDTreeWinSize = 45 
-
-" highlight trailing whitespace
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
+let g:NERDTreeWinSize = 45
 
 " Remap the leader key
 let mapleader = ";"
@@ -27,9 +23,9 @@ if exists("&transparency")
   set transparency=4
 endif
 
-" Set the right gutter to 80 characters 
+" Set the right gutter to 80 characters
 if exists("&colorcolumn")
-  set colorcolumn=80 
+  set colorcolumn=80
 endif
 
 " Use standard two space tabs for coffeescript files
@@ -46,7 +42,7 @@ nnoremap <leader>evr :so $MYVIMRC<cr>
 nnoremap <leader>nt :NERDTreeToggle<cr>
 
 " Binding to strip all trailing whitespace from file
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+nnoremap <leader>w :FixWhitespace<cr>
 
 " Show invisibles
 " set list
