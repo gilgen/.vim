@@ -15,7 +15,7 @@ set nowrap
 filetype plugin indent on
 
 " Color scheme and font
-set guifont=inconsolata:h13
+set guifont=Monaco:h11
 colorscheme jellybeans
 
 " Show line numbers
