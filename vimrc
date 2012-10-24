@@ -2,7 +2,12 @@
 call pathogen#infect()
 syntax on
 
+" Make the nerdtree a bit wider
 let g:NERDTreeWinSize = 45 
+
+" highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
 
 " Remap the leader key
 let mapleader = ";"
@@ -19,7 +24,7 @@ set number
 
 " Put a little transparency in
 if exists("&transparency")
-  set transparency=3
+  set transparency=4
 endif
 
 " Set the right gutter to 80 characters 
@@ -30,14 +35,12 @@ endif
 " Use standard two space tabs for coffeescript files
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 
-" Close vi if nerdtree is the last remaining buffer (tab?)
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
 " Open nerdtree if there wasn't a file specified
 autocmd vimenter * if !argc() | NERDTree | endif
 
 " Convenience binding to open up ~/.vimrc
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+nnoremap <leader>evr :so $MYVIMRC<cr>
 
 " Map nerdtree to <leader>nt
 nnoremap <leader>nt :NERDTreeToggle<cr>
