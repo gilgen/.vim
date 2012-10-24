@@ -22,3 +22,6 @@
 [submodule "bundle/vim-colors-sunburst"]
 	path = bundle/vim-colors-sunburst
 	url = git://github.com/sickill/vim-sunburst.git
+[submodule "bundle/handlebars"]
+	path = bundle/handlebars
+	url = git://github.com/nono/vim-handlebars.git
