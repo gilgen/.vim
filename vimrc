@@ -2,6 +2,8 @@
 call pathogen#infect()
 syntax on
 
+let g:NERDTreeWinSize = 45 
+
 " Remap the leader key
 let mapleader = ";"
 
@@ -10,10 +12,15 @@ filetype plugin indent on
 
 " Color scheme and font
 set guifont=inconsolata:h13
-colorscheme Sunburst
+colorscheme jellybeans
 
 " Show line numbers
 set number
+
+" Put a little transparency in
+if exists("&transparency")
+  set transparency=3
+endif
 
 " Set the right gutter to 80 characters 
 if exists("&colorcolumn")
@@ -24,7 +31,7 @@ endif
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 
 " Close vi if nerdtree is the last remaining buffer (tab?)
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Open nerdtree if there wasn't a file specified
 autocmd vimenter * if !argc() | NERDTree | endif
