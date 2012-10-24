@@ -8,6 +8,9 @@ let g:NERDTreeWinSize = 45
 " Remap the leader key
 let mapleader = ";"
 
+" No word wrap by default
+set nowrap
+
 " Indent intelligently
 filetype plugin indent on
 
