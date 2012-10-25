@@ -23,7 +23,7 @@ set number
 
 " Put a little transparency in
 if exists("&transparency")
-  set transparency=4
+  set transparency=2
 endif
 
 " Set the right gutter to 80 characters
@@ -51,4 +51,5 @@ nnoremap <leader>w :FixWhitespace<cr>
 " set list
 " set listchars=tab:▸\ ,eol:¬
 
+" Setup tabs to be two spaces
 set softtabstop=2 shiftwidth=2 expandtab
