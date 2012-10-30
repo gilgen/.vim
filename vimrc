@@ -1,6 +1,9 @@
 " Load up all of the items in bundles
 call pathogen#infect()
 
+" We're using this in a 256 colour terminal
+set t_Co=256
+
 " Highlight the current line
 set cursorline
 
