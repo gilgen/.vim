@@ -1,6 +1,17 @@
 " Load up all of the items in bundles
 call pathogen#infect()
+
+" Highlight the current line
+set cursorline
+
+" Highlight syntax
 syntax on
+
+" Highlight search results by default
+nnoremap <F3> :set invhlsearch hlsearch?<CR>
+
+" Toggle paste mode on/off
+nnoremap <F2> :set invpaste paste?<CR>
 
 " Make the nerdtree a bit wider
 let g:NERDTreeWinSize = 45
@@ -15,16 +26,20 @@ set nowrap
 filetype plugin indent on
 
 " Color scheme and font
-set guifont=Monaco:h11
-colorscheme jellybeans
+set guifont=monaco:h11
+if has('gui_running')
+  colorscheme jellybeans
+else
+  colorscheme jellybeans
+endif
 
 " Show line numbers
 set number
 
 " Put a little transparency in
-if exists("&transparency")
-  set transparency=2
-endif
+" if exists("&transparency")
+"   set transparency=0
+" endif
 
 " Set the right gutter to 80 characters
 if exists("&colorcolumn")
@@ -32,7 +47,7 @@ if exists("&colorcolumn")
 endif
 
 " Use standard two space tabs for coffeescript files
-au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+" au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 
 " Open nerdtree if there wasn't a file specified
 autocmd vimenter * if !argc() | NERDTree | endif

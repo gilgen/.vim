@@ -40,3 +40,6 @@
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = https://github.com/ervandew/supertab
+[submodule "bundle/nginx-vim-syntax"]
+	path = bundle/nginx-vim-syntax
+	url = git://github.com/andersjanmyr/nginx-vim-syntax.git
