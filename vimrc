@@ -10,6 +10,9 @@ set cursorline
 " Highlight syntax
 syntax on
 
+" Get rid of that annoying underlining in html files
+hi link htmlLink NONE
+
 " Highlight search results by default
 nnoremap <F3> :set invhlsearch hlsearch?<CR>
 
@@ -32,9 +35,15 @@ filetype plugin indent on
 set guifont=monaco:h11
 if has('gui_running')
   colorscheme jellybeans
+  let titlestring=system('pwd | sed "s/.*\///"')
+  execute "set titlestring=".titlestring
 else
   colorscheme jellybeans
+  set mouse=a
 endif
+
+" Auto reload the .vimrc
+autocmd! bufwritepost .vimrc source %
 
 " Show line numbers
 set number
@@ -57,7 +66,6 @@ autocmd vimenter * if !argc() | NERDTree | endif
 
 " Convenience binding to open up ~/.vimrc
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
-nnoremap <leader>evr :so $MYVIMRC<cr>
 
 " Map nerdtree to <leader>nt
 nnoremap <leader>nt :NERDTreeToggle<cr>
