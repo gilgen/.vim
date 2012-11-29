@@ -22,11 +22,17 @@ hi link htmlLink NONE
 " Highlight search results by default
 nnoremap <F3> :set invhlsearch hlsearch?<CR>
 
+" Insert a newline
+nnoremap <leader>o o<ESC>k
+
 " Toggle paste mode on/off
 nnoremap <F2> :set invpaste paste?<CR>
 
 " Make things fancy
 let g:Powerline_symbols = 'fancy'
+
+" Make powerline show up in single windows
+set laststatus=2
 
 " Make the nerdtree a bit wider
 let g:NERDTreeWinSize = 45
