@@ -1,8 +1,14 @@
 " Load up all of the items in bundles
 call pathogen#infect()
 
+" No error bells
+set noeb vb t_vb=
+
 " We're using this in a 256 colour terminal
 set t_Co=256
+
+" Make dot work in visual mode
+vnoremap . :norm.<CR>
 
 " Highlight the current line
 set cursorline
@@ -19,6 +25,9 @@ nnoremap <F3> :set invhlsearch hlsearch?<CR>
 " Toggle paste mode on/off
 nnoremap <F2> :set invpaste paste?<CR>
 
+" Make things fancy
+let g:Powerline_symbols = 'fancy'
+
 " Make the nerdtree a bit wider
 let g:NERDTreeWinSize = 45
 
@@ -32,13 +41,14 @@ set nowrap
 filetype plugin indent on
 
 " Color scheme and font
-set guifont=monaco:h11
+set guifont=Inconsolata-dz\ For\ Powerline:h11
+colorscheme jellybeans
+
+" Conditionals upon if a gui is running
 if has('gui_running')
-  colorscheme jellybeans
   let titlestring=system('pwd | sed "s/.*\///"')
   execute "set titlestring=".titlestring
 else
-  colorscheme jellybeans
   set mouse=a
 endif
 
