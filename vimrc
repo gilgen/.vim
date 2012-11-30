@@ -29,7 +29,10 @@ nnoremap <leader>o o<ESC>k
 nnoremap <F2> :set invpaste paste?<CR>
 
 " Make things fancy
+set nocompatible
 let g:Powerline_symbols = 'fancy'
+let g:Powerline_theme="default"
+let g:Powerline_colorscheme="default"
 
 " Make powerline show up in single windows
 set laststatus=2
@@ -74,9 +77,6 @@ if exists("&colorcolumn")
   set colorcolumn=80
 endif
 
-" Use standard two space tabs for coffeescript files
-" au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
-
 " Open nerdtree if there wasn't a file specified
 autocmd vimenter * if !argc() | NERDTree | endif
 
@@ -88,10 +88,6 @@ nnoremap <leader>nt :NERDTreeToggle<cr>
 
 " Binding to strip all trailing whitespace from file
 nnoremap <leader>w :FixWhitespace<cr>
-
-" Show invisibles
-" set list
-" set listchars=tab:▸\ ,eol:¬
 
 " Setup tabs to be two spaces
 set softtabstop=2 shiftwidth=2 expandtab
