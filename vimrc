@@ -13,6 +13,9 @@ vnoremap . :norm.<CR>
 " Highlight the current line
 set cursorline
 
+" Don't show the scrollbars
+set guioptions-=L
+
 " Highlight syntax
 syntax on
 
