@@ -19,6 +19,11 @@ set guioptions-=L
 " Highlight syntax
 syntax on
 
+" Nginx highlighting
+if has("autocmd")
+  au BufNewFile,BufRead nginx.conf set filetype=nginx
+endif"
+
 " Get rid of that annoying underlining in html files
 hi link htmlLink NONE
 
