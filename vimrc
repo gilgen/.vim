@@ -24,6 +24,9 @@ if has("autocmd")
   au BufNewFile,BufRead nginx.conf set filetype=nginx
 endif"
 
+" Don't close if nerdtree is the last thing
+let nerdtree_tabs_autoclose=0
+
 " Get rid of that annoying underlining in html files
 hi link htmlLink NONE
 
