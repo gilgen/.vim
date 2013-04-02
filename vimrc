@@ -25,7 +25,7 @@ if has("autocmd")
 endif"
 
 " Don't close if nerdtree is the last thing
-let nerdtree_tabs_autoclose=0
+" let nerdtree_tabs_autoclose=0
 
 " Get rid of that annoying underlining in html files
 hi link htmlLink NONE
@@ -95,7 +95,7 @@ autocmd vimenter * if !argc() | NERDTree | endif
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
 " Map nerdtree to <leader>nt
-nnoremap <leader>nt :NERDTreeToggle<cr>
+nnoremap <leader>nt :NERDTreeToggle<cr> :NERDTreeMirror<CR>
 
 " Binding to strip all trailing whitespace from file
 nnoremap <leader>w :FixWhitespace<cr>
