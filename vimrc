@@ -1,6 +1,9 @@
 " Load up all of the items in bundles
 call pathogen#infect()
 
+" Make the ruby textobject stuff work
+runtime macros/matchit.vim
+
 " No error bells
 set noeb vb t_vb=
 
@@ -58,7 +61,9 @@ let mapleader = ";"
 set nowrap
 
 " Indent intelligently
-filetype plugin indent on
+if has("autocmd")
+  filetype plugin indent on
+endif
 
 " Color scheme and font
 set guifont=Inconsolata-dz\ For\ Powerline:h11
