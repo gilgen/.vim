@@ -58,3 +58,6 @@
 [submodule "bundle/vim-matchit"]
 	path = bundle/vim-matchit
 	url = git://github.com/edsono/vim-matchit.git
+[submodule "bundle/greplace"]
+	path = bundle/greplace
+	url = git://github.com/jamiebikies/greplace.vim.git
