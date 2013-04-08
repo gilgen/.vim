@@ -4,6 +4,21 @@ call pathogen#infect()
 " Make the ruby textobject stuff work
 runtime macros/matchit.vim
 
+" Some handy stuff for autocmd
+if has("autocmd")
+  " Nginx highlighting
+  au BufNewFile,BufRead nginx.conf set filetype=nginx
+
+  " Indent intelligently
+  filetype plugin indent on
+
+  " Auto reload the .vimrc
+  autocmd! bufwritepost .vimrc source %
+
+  " Open nerdtree if there wasn't a file specified
+  autocmd vimenter * if !argc() | NERDTree | endif
+endif
+
 " No error bells
 set noeb vb t_vb=
 
@@ -18,25 +33,10 @@ set cursorline
 
 " Don't show the scrollbars
 set guioptions-=L
+set guioptions-=r
 
 " Highlight syntax
 syntax on
-
-if has("autocmd")
-
-  " Nginx highlighting
-  au BufNewFile,BufRead nginx.conf set filetype=nginx
-
-  " Indent intelligently
-  filetype plugin indent on
-
-  " Auto reload the .vimrc
-  autocmd! bufwritepost .vimrc source %
-
-  " Open nerdtree if there wasn't a file specified
-  autocmd vimenter * if !argc() | NERDTree | endif
-
-endif
 
 " Don't close if nerdtree is the last thing
 " let nerdtree_tabs_autoclose=0
@@ -79,8 +79,13 @@ colorscheme jellybeans
 if has('gui_running')
   let titlestring=system('pwd | sed "s/.*\///"')
   execute "set titlestring=".titlestring
+
+  " Always show the tab bar in macvim
+  set showtabline=2
 else
   set mouse=a
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
 " Show line numbers
@@ -105,5 +110,11 @@ nnoremap <leader>nt :NERDTreeToggle<cr> :NERDTreeMirror<CR>
 " Binding to strip all trailing whitespace from file
 nnoremap <leader>w :FixWhitespace<cr>
 
+" Quicker global search
+nnoremap <leader>gs :Gsearch  .<left><left>
+
 " Setup tabs to be two spaces
 set softtabstop=2 shiftwidth=2 expandtab
+
+" Ignore stuff in ctrl-p
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*
