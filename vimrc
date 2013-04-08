@@ -22,10 +22,21 @@ set guioptions-=L
 " Highlight syntax
 syntax on
 
-" Nginx highlighting
 if has("autocmd")
+
+  " Nginx highlighting
   au BufNewFile,BufRead nginx.conf set filetype=nginx
-endif"
+
+  " Indent intelligently
+  filetype plugin indent on
+
+  " Auto reload the .vimrc
+  autocmd! bufwritepost .vimrc source %
+
+  " Open nerdtree if there wasn't a file specified
+  autocmd vimenter * if !argc() | NERDTree | endif
+
+endif
 
 " Don't close if nerdtree is the last thing
 " let nerdtree_tabs_autoclose=0
@@ -60,11 +71,6 @@ let mapleader = ";"
 " No word wrap by default
 set nowrap
 
-" Indent intelligently
-if has("autocmd")
-  filetype plugin indent on
-endif
-
 " Color scheme and font
 set guifont=Inconsolata-dz\ For\ Powerline:h11
 colorscheme jellybeans
@@ -77,24 +83,18 @@ else
   set mouse=a
 endif
 
-" Auto reload the .vimrc
-autocmd! bufwritepost .vimrc source %
-
 " Show line numbers
 set number
 
 " Put a little transparency in
-" if exists("&transparency")
-"   set transparency=0
-" endif
+if exists("&transparency")
+  set transparency=3
+endif
 
 " Set the right gutter to 80 characters
 if exists("&colorcolumn")
   set colorcolumn=80
 endif
-
-" Open nerdtree if there wasn't a file specified
-autocmd vimenter * if !argc() | NERDTree | endif
 
 " Convenience binding to open up ~/.vimrc
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
