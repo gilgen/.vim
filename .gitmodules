@@ -61,3 +61,6 @@
 [submodule "bundle/greplace"]
 	path = bundle/greplace
 	url = git://github.com/jamiebikies/greplace.vim.git
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git

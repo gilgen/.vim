@@ -1,6 +1,10 @@
 " Load up all of the items in bundles
 call pathogen#infect()
 
+" Color scheme and font
+set guifont=Inconsolata-dz\ For\ Powerline:h11
+colorscheme jellybeans
+
 " Make the ruby textobject stuff work
 runtime macros/matchit.vim
 
@@ -18,6 +22,10 @@ if has("autocmd")
   " Open nerdtree if there wasn't a file specified
   autocmd vimenter * if !argc() | NERDTree | endif
 endif
+
+" Don't create swap and backup files
+set noswapfile
+set nobackup
 
 " No error bells
 set noeb vb t_vb=
@@ -65,15 +73,14 @@ set laststatus=2
 " Make the nerdtree a bit wider
 let g:NERDTreeWinSize = 45
 
+" Nerdtree doesn't have to show tmp
+let NERDTreeIgnore=['tmp']
+
 " Remap the leader key
 let mapleader = ";"
 
 " No word wrap by default
 set nowrap
-
-" Color scheme and font
-set guifont=Inconsolata-dz\ For\ Powerline:h11
-colorscheme jellybeans
 
 " Conditionals upon if a gui is running
 if has('gui_running')
@@ -118,3 +125,6 @@ set softtabstop=2 shiftwidth=2 expandtab
 
 " Ignore stuff in ctrl-p
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*
+
+" Set the nerdtree folder colour
+hi Directory guifg=#7697d6 ctermfg=blue
