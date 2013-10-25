@@ -63,7 +63,7 @@ nnoremap <F2> :set invpaste paste?<CR>
 
 " Make things fancy
 set nocompatible
-let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols='fancy'
 let g:Powerline_theme="default"
 let g:Powerline_colorscheme="default"
 
