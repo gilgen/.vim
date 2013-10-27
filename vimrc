@@ -100,7 +100,7 @@ set number
 
 " Put a little transparency in
 if exists("&transparency")
-  set transparency=3
+  set transparency=2
 endif
 
 " Set the right gutter to 80 characters
