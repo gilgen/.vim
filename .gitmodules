@@ -61,3 +61,6 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
+[submodule "bundle/mustache"]
+	path = bundle/mustache
+	url = git://github.com/mustache/vim-mode.git

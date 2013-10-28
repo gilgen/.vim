@@ -1,6 +1,10 @@
 " Load up all of the items in bundles
 call pathogen#infect()
 
+" Indent intelligently
+filetype plugin indent on
+syntax on
+
 " Color scheme and font
 set guifont=Inconsolata-dz\ For\ Powerline:h11
 colorscheme jellybeans
@@ -8,20 +12,24 @@ colorscheme jellybeans
 " Make the ruby textobject stuff work
 runtime macros/matchit.vim
 
+" Get rid of that annoying underlining in html files
+hi link htmlLink NONE
+
 " Some handy stuff for autocmd
 if has("autocmd")
   " Nginx highlighting
   au BufNewFile,BufRead nginx.conf set filetype=nginx
 
-  " Indent intelligently
-  filetype plugin indent on
-
   " Auto reload the .vimrc
   autocmd! bufwritepost .vimrc source %
+  autocmd! bufwritepost .vimrc PowerlineReloadColorscheme
 
   " Open nerdtree if there wasn't a file specified
   autocmd vimenter * if !argc() | NERDTree | endif
 endif
+
+" Some handy auto-completes for handlebars files
+let g:mustache_abbreviations = 1
 
 " Don't create swap and backup files
 set noswapfile
@@ -43,14 +51,8 @@ set cursorline
 set guioptions-=L
 set guioptions-=r
 
-" Highlight syntax
-syntax on
-
 " Don't close if nerdtree is the last thing
 " let nerdtree_tabs_autoclose=0
-
-" Get rid of that annoying underlining in html files
-hi link htmlLink NONE
 
 " Highlight search results by default
 nnoremap <F3> :set invhlsearch hlsearch?<CR>
@@ -100,7 +102,7 @@ set number
 
 " Put a little transparency in
 if exists("&transparency")
-  set transparency=2
+  set transparency=13
 endif
 
 " Set the right gutter to 80 characters
@@ -112,7 +114,7 @@ endif
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
 " Map nerdtree to <leader>nt
-nnoremap <leader>nt :NERDTreeToggle<cr> :NERDTreeMirror<CR>
+nnoremap <leader>nt :NERDTreeToggle<cr> :NERDTreeMirror<cr>
 
 " Binding to strip all trailing whitespace from file
 nnoremap <leader>w :FixWhitespace<cr>
@@ -128,3 +130,4 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*
 
 " Set the nerdtree folder colour
 hi Directory guifg=#7697d6 ctermfg=blue
+
