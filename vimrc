@@ -1,12 +1,14 @@
 " Load up all of the items in bundles
 call pathogen#infect()
 
-" Indent intelligently
-filetype plugin indent on
+" Highlight syntax
 syntax on
 
+" Indent intelligently
+filetype plugin indent on
+
 " Color scheme and font
-set guifont=Inconsolata-dz\ For\ Powerline:h11
+set guifont=Inconsolata-dz\ For\ Powerline:h12
 colorscheme jellybeans
 
 " Make the ruby textobject stuff work
@@ -22,7 +24,6 @@ if has("autocmd")
 
   " Auto reload the .vimrc
   autocmd! bufwritepost .vimrc source %
-  autocmd! bufwritepost .vimrc PowerlineReloadColorscheme
 
   " Open nerdtree if there wasn't a file specified
   autocmd vimenter * if !argc() | NERDTree | endif
@@ -30,6 +31,9 @@ endif
 
 " Some handy auto-completes for handlebars files
 let g:mustache_abbreviations = 1
+
+" Don't lose buffer histoy when changing
+set hidden
 
 " Don't create swap and backup files
 set noswapfile
@@ -102,7 +106,7 @@ set number
 
 " Put a little transparency in
 if exists("&transparency")
-  set transparency=13
+  set transparency=17
 endif
 
 " Set the right gutter to 80 characters
