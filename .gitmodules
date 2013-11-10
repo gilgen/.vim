@@ -21,7 +21,7 @@
 	url = git://github.com/sickill/vim-sunburst.git
 [submodule "bundle/vim-autoclose"]
 	path = bundle/vim-autoclose
-	url = git://github.com/Townk/vim-autoclose.git
+	url = git://github.com/jamiebikies/vim-autoclose.git
 [submodule "bundle/vim-trailing-whitespace"]
 	path = bundle/vim-trailing-whitespace
 	url = https://github.com/bronson/vim-trailing-whitespace
