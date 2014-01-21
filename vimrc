@@ -80,7 +80,7 @@ set laststatus=2
 let g:NERDTreeWinSize = 45
 
 " Nerdtree doesn't have to show tmp
-let NERDTreeIgnore=['tmp']
+let NERDTreeIgnore=['tmp', 'node_modules']
 
 " Remap the leader key
 let mapleader = ";"
@@ -106,8 +106,11 @@ set number
 
 " Put a little transparency in
 if exists("&transparency")
-  set transparency=3
+  set transparency=2
 endif
+
+" Ignore stuff in ctrlp
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " Set the right gutter to 80 characters
 if exists("&colorcolumn")
