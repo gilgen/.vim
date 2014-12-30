@@ -96,7 +96,7 @@ if has('gui_running')
   " Always show the tab bar in macvim
   set showtabline=2
 else
-  set mouse=a
+  set mouse-=a
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
@@ -106,7 +106,7 @@ set number
 
 " Put a little transparency in
 if exists("&transparency")
-  set transparency=2
+  set transparency=4
 endif
 
 " Ignore stuff in ctrlp
@@ -137,4 +137,8 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*
 
 " Set the nerdtree folder colour
 hi Directory guifg=#7697d6 ctermfg=blue
+
+" Disable code folding
+set nofoldenable
+
 
