@@ -8,7 +8,7 @@ syntax on
 filetype plugin indent on
 
 " Color scheme and font
-set guifont=Inconsolata-dz\ For\ Powerline:h12
+set guifont=Inconsolata-dz\ For\ Powerline:h15
 colorscheme jellybeans
 
 " Make the ruby textobject stuff work
@@ -106,7 +106,7 @@ set number
 
 " Put a little transparency in
 if exists("&transparency")
-  set transparency=4
+  set transparency=5
 endif
 
 " Ignore stuff in ctrlp
@@ -141,4 +141,6 @@ hi Directory guifg=#7697d6 ctermfg=blue
 " Disable code folding
 set nofoldenable
 
-
+" Fix the background transparency
+hi Normal ctermbg=none
+hi NonText ctermbg=none
