@@ -133,7 +133,7 @@ nnoremap <leader>gs :Gsearch  .<left><left>
 set softtabstop=2 shiftwidth=2 expandtab
 
 " Ignore stuff in ctrl-p
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*,*/dist/*
 
 " Set the nerdtree folder colour
 hi Directory guifg=#7697d6 ctermfg=blue
