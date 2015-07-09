@@ -27,7 +27,7 @@
 	url = https://github.com/bronson/vim-trailing-whitespace
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
-	url = git://github.com/jamiebikies/ctrlp.vim.git
+	url = https://github.com/jamiebikies/ctrlp.vim.git
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = https://github.com/ervandew/supertab
