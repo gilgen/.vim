@@ -37,9 +37,6 @@
 [submodule "bundle/vim-powerline"]
 	path = bundle/vim-powerline
         url = git://github.com/jamiebikies/vim-powerline.git
-[submodule "bundle/vim-jst"]
-	path = bundle/vim-jst
-	url = git://github.com/briancollins/vim-jst.git
 [submodule "bundle/nginx"]
 	path = bundle/nginx
 	url = git://github.com/vim-scripts/nginx.vim.git
@@ -58,9 +55,6 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
-[submodule "bundle/mustache"]
-	path = bundle/mustache
-	url = git://github.com/mustache/vim-mode.git
 [submodule "bundle/vim-javascript-syntax"]
 	path = bundle/vim-javascript-syntax
 	url = git@github.com:jelera/vim-javascript-syntax.git

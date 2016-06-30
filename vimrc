@@ -144,3 +144,12 @@ set nofoldenable
 " Fix the background transparency
 hi Normal ctermbg=none
 hi NonText ctermbg=none
+
+map <silent> <Up> gk
+imap <silent> <Up> <C-o>gk
+map <silent> <Down> gj
+imap <silent> <Down> <C-o>gj
+map <silent> <home> g<home>
+imap <silent> <home> <C-o>g<home>
+map <silent> <End> g<End>
+imap <silent> <End> <C-o>g<End>
