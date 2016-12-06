@@ -80,7 +80,7 @@ set laststatus=2
 let g:NERDTreeWinSize = 45
 
 " Nerdtree doesn't have to show tmp
-let NERDTreeIgnore=['tmp', 'node_modules']
+let NERDTreeIgnore=['tmp', 'node_modules', 'bower_components']
 
 " Remap the leader key
 let mapleader = ";"
