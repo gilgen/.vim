@@ -52,9 +52,6 @@
 [submodule "bundle/vim-textobj-rubyblock"]
 	path = bundle/vim-textobj-rubyblock
 	url = git://github.com/nelstrom/vim-textobj-rubyblock.git
-[submodule "bundle/vim-matchit"]
-	path = bundle/vim-matchit
-	url = git://github.com/edsono/vim-matchit.git
 [submodule "bundle/greplace"]
 	path = bundle/greplace
 	url = git@github.com:jamiebikies/greplace.vim.git
