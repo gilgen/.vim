@@ -130,7 +130,7 @@ nnoremap <leader>w :FixWhitespace<cr>
 nnoremap <leader>gs :Gsearch  .<left><left>
 
 " Setup tabs to be two spaces
-set softtabstop=2 shiftwidth=2 expandtab
+set softtabstop=2 shiftwidth=2 tabstop=2 expandtab
 
 " Ignore stuff in ctrl-p
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*,*/dist/*
@@ -153,3 +153,5 @@ map <silent> <home> g<home>
 imap <silent> <home> <C-o>g<home>
 map <silent> <End> g<End>
 imap <silent> <End> <C-o>g<End>
+
+imap jk <Esc>
