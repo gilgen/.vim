@@ -67,3 +67,6 @@
 [submodule "bundle/python-syntax"]
 	path = bundle/python-syntax
 	url = git@github.com:hdima/python-syntax
+[submodule "bundle/vim-ember-hbs"]
+	path = bundle/vim-ember-hbs
+	url = git@github.com:joukevandermaas/vim-ember-hbs
