@@ -1,4 +1,6 @@
 " Load up all of the items in bundles
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
 call pathogen#infect()
 
 " Highlight syntax
