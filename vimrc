@@ -14,7 +14,13 @@ set autoread
 
 " Color scheme and font
 set guifont=Inconsolata-dz\ For\ Powerline:h15
-colorscheme jellybeans
+let g:Powerline_symbols = 'fancy'
+set encoding=utf-8
+set t_Co=256
+set fillchars+=stl:\ ,stlnc:\
+" set term=xterm-256color
+set termencoding=utf-8
+colorscheme dracula
 
 " Script to copy all matches
 function! CopyMatches(reg)
@@ -120,7 +126,7 @@ set number
 
 " Put a little transparency in
 if exists("&transparency")
-  set transparency=5
+  " set transparency=4
 endif
 
 " Ignore stuff in ctrlp
@@ -156,8 +162,8 @@ hi Directory guifg=#7697d6 ctermfg=blue
 set nofoldenable
 
 " Fix the background transparency
-hi Normal ctermbg=none
-hi NonText ctermbg=none
+" hi Normal ctermbg=none
+" hi NonText ctermbg=none
 
 map <silent> <Up> gk
 imap <silent> <Up> <C-o>gk
