@@ -14,10 +14,9 @@ set autoread
 
 " Color scheme and font
 set guifont=Inconsolata-dz\ For\ Powerline:h15
-let g:Powerline_symbols = 'fancy'
+" let g:Powerline_symbols = 'fancy'
 set encoding=utf-8
 set t_Co=256
-set fillchars+=stl:\ ,stlnc:\
 " set term=xterm-256color
 set termencoding=utf-8
 colorscheme dracula
@@ -115,10 +114,16 @@ if has('gui_running')
 
   " Always show the tab bar in macvim
   set showtabline=2
+  set fillchars+=vert:\  
 else
-  set mouse-=a
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  " set mouse-=a
+  set mouse=a
+  " let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  " let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+  " Make the vertical split more attractive
+  set fillchars+=vert:\  
+
 endif
 
 " Show line numbers
