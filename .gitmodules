@@ -76,9 +76,6 @@
 [submodule "bundle/dracula-theme"]
 	path = bundle/dracula-theme
 	url = git@github.com:dracula/vim.git
-[submodule "/Users/jgilgen/.vim/bundle/gruvbox"]
-	path = /Users/jgilgen/.vim/bundle/gruvbox
-	url = https://github.com/morhetz/gruvbox.git
 [submodule "bundle/onehalf"]
 	path = bundle/onehalf
 	url = https://github.com/sonph/onehalf
