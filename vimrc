@@ -12,13 +12,28 @@ filetype plugin indent on
 " Automatically read changed files
 set autoread
 
+
+" For some reason, dracula italics causes a gross background color on some
+" constants
+" let g:dracula_italic = 0
+
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+cnoremap <C-h> <Left>
+cnoremap <C-j> <Down>
+cnoremap <C-k> <Up>
+cnoremap <C-l> <Right>
+
 " Color scheme and font
-set guifont=Inconsolata-dz\ For\ Powerline:h15
+" set guifont=Inconsolata-dz\ for\ Powerline:h15
+set guifont=Menlo\ for\ Powerline:h15
 " let g:Powerline_symbols = 'fancy'
-set encoding=utf-8
+" set encoding=utf-8
 set t_Co=256
 " set term=xterm-256color
-set termencoding=utf-8
+" set termencoding=utf-8
 colorscheme dracula
 
 " Script to copy all matches
@@ -30,8 +45,17 @@ function! CopyMatches(reg)
 endfunction
 command! -register CopyMatches call CopyMatches(<q-reg>)
 
+" Script to copy all matches
+function! PowerlineReload()
+  execute 'py powerline.reload()'
+endfunction
+command! -register PowerlineReload call PowerlineReload()
+
 " Make the ruby textobject stuff work
 runtime macros/matchit.vim
+
+" shortcut for copying link to GH
+" let g:gh_open_command = 'fn() { echo "$@" | pbcopy; }; fn '
 
 " Get rid of that annoying underlining in html files
 hi link htmlLink NONE
@@ -62,7 +86,7 @@ set nobackup
 set noeb vb t_vb=
 
 " We're using this in a 256 colour terminal
-set t_Co=256
+" set t_Co=256
 
 " Make dot work in visual mode
 vnoremap . :norm.<CR>
@@ -118,8 +142,8 @@ if has('gui_running')
 else
   " set mouse-=a
   set mouse=a
-  " let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  " let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
   " Make the vertical split more attractive
   set fillchars+=vert:\  
@@ -131,7 +155,7 @@ set number
 
 " Put a little transparency in
 if exists("&transparency")
-  " set transparency=4
+  set transparency=10
 endif
 
 " Ignore stuff in ctrlp
@@ -153,6 +177,39 @@ nnoremap <leader>w :FixWhitespace<cr>
 
 " Quicker global search
 nnoremap <leader>gs :Gsearch  .<left><left>
+
+" Open file under cursor in new split at line
+nnoremap <leader>o <C-w>F
+
+function! GetArduinoUSBPort()
+  return system("arduino-cli board list | grep USB | awk '{print $1}'")
+endfunction
+command! -register GetArduinoUSBPort call GetArduinoUSBPort()
+
+" Compile arduino
+function! CompileArduinoCurrentDir()
+  :! arduino-cli compile --fqbn arduino:avr:uno
+endfunction
+command! -register CompileArduinoCurrentDir call CompileArduinoCurrentDir()
+
+" Upload arduino
+function! UploadArduinoCurrentDir()
+  let port = GetArduinoUSBPort()
+  let cmd = "arduino-cli upload --fqbn arduino:avr:uno -p ".port
+  execute ':! '.cmd
+endfunction
+command! -register UploadArduinoCurrentDir call UploadArduinoCurrentDir()
+
+" Compile and upload arduino
+function! CompileAndUploadArduinoCurrentDir()
+  execute CompileArduinoCurrentDir()
+  execute UploadArduinoCurrentDir()
+endfunction
+command! -register CompileAndUploadArduinoCurrentDir call CompileAndUploadArduinoCurrentDir()
+
+nnoremap <leader>ac :CompileArduinoCurrentDir<cr>
+nnoremap <leader>au :UploadArduinoCurrentDir<cr>
+nnoremap <leader>aa :CompileAndUploadArduinoCurrentDir<cr>
 
 " Setup tabs to be two spaces
 set softtabstop=2 shiftwidth=2 tabstop=2 expandtab
