@@ -13,6 +13,12 @@ filetype plugin indent on
 set autoread
 
 
+" Setup Python
+" set pythonhome=/Users/jgilgen/opt/anaconda3/envs/ansible37
+" set pythondll=$HOME/.pyenv/versions/2.7.11/lib/libpython2.7.dylib
+" set pythonthreehome=/Users/jgilgen/opt/anaconda3/bin
+" set pythonthreedll=/Users/jgilgen/opt/anaconda3/lib/libpython3.7m.dylib
+
 " For some reason, dracula italics causes a gross background color on some
 " constants
 " let g:dracula_italic = 0
@@ -28,7 +34,8 @@ cnoremap <C-l> <Right>
 
 " Color scheme and font
 " set guifont=Inconsolata-dz\ for\ Powerline:h15
-set guifont=Menlo\ for\ Powerline:h15
+" set guifont=Menlo\ for\ Powerline:h15
+set guifont=SF\ Mono\ Powerline:h15
 " let g:Powerline_symbols = 'fancy'
 " set encoding=utf-8
 set t_Co=256
@@ -155,7 +162,7 @@ set number
 
 " Put a little transparency in
 if exists("&transparency")
-  set transparency=10
+  set transparency=2
 endif
 
 " Ignore stuff in ctrlp
@@ -181,18 +188,24 @@ nnoremap <leader>gs :Gsearch  .<left><left>
 " Open file under cursor in new split at line
 nnoremap <leader>o <C-w>F
 
+
+" For some reason this is needed for arduino .ino auto indenting
+set smartindent
+
+
+" Function to pull the current arduino port with the arduino-cli command
 function! GetArduinoUSBPort()
   return system("arduino-cli board list | grep USB | awk '{print $1}'")
 endfunction
 command! -register GetArduinoUSBPort call GetArduinoUSBPort()
 
-" Compile arduino
+" Compile current arduino sketch
 function! CompileArduinoCurrentDir()
   :! arduino-cli compile --fqbn arduino:avr:uno
 endfunction
 command! -register CompileArduinoCurrentDir call CompileArduinoCurrentDir()
 
-" Upload arduino
+" Upload current arduino sketch
 function! UploadArduinoCurrentDir()
   let port = GetArduinoUSBPort()
   let cmd = "arduino-cli upload --fqbn arduino:avr:uno -p ".port
