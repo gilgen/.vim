@@ -82,3 +82,6 @@
 [submodule "bundle/atom-dark"]
 	path = bundle/atom-dark
 	url = https://github.com/gosukiwi/vim-atom-dark
+[submodule "bundle/vim-jsx"]
+	path = bundle/vim-jsx
+	url = https://github.com/mxw/vim-jsx.git

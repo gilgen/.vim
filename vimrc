@@ -12,7 +12,6 @@ filetype plugin indent on
 " Automatically read changed files
 set autoread
 
-
 " Setup Python
 " set pythonhome=/Users/jgilgen/opt/anaconda3/envs/ansible37
 " set pythondll=$HOME/.pyenv/versions/2.7.11/lib/libpython2.7.dylib
