@@ -270,3 +270,6 @@ map <silent> <End> g<End>
 imap <silent> <End> <C-o>g<End>
 
 imap jk <Esc>
+
+" Disable markdown folding
+au FileType mkd setlocal nofoldenable
