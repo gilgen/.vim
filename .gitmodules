@@ -21,13 +21,13 @@
 	url = https://github.com/sickill/vim-sunburst.git
 [submodule "bundle/vim-autoclose"]
 	path = bundle/vim-autoclose
-	url = https://github.com/jamiebikies/vim-autoclose.git
+	url = https://github.com/gilgen/vim-autoclose.git
 [submodule "bundle/vim-trailing-whitespace"]
 	path = bundle/vim-trailing-whitespace
 	url = https://github.com/bronson/vim-trailing-whitespace
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
-	url = https://github.com/jamiebikies/ctrlp.vim.git
+	url = https://github.com/gilgen/ctrlp.vim.git
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = https://github.com/ervandew/supertab
@@ -51,7 +51,7 @@
 	url = https://github.com/nelstrom/vim-textobj-rubyblock.git
 [submodule "bundle/greplace"]
 	path = bundle/greplace
-	url = git@github.com:jamiebikies/greplace.vim.git
+	url = git@github.com:gilgen/greplace.vim.git
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
