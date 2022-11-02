@@ -82,6 +82,6 @@
 [submodule "bundle/vim-jsx"]
 	path = bundle/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
-[submodule "emmet-vim"]
-	path = emmet-vim
+[submodule "bundle/emmet-vim"]
+	path = bundle/emmet-vim
 	url = https://github.com/mattn/emmet-vim
