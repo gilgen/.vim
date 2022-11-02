@@ -273,3 +273,9 @@ imap jk <Esc>
 
 " Disable markdown folding
 au FileType mkd setlocal nofoldenable
+
+" Open nerdtree in new tabs
+autocmd BufWinEnter * NERDTreeMirror
+
+" Close tab when nerdtree only thing left
+autocmd BufEnter * if tabpagenr('$') > 1 && !len(filter(tabpagebuflist(), 'getbufvar(v:val,"&ft") != "nerdtree"')) | tabclose | endif
