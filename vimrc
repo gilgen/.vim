@@ -279,3 +279,6 @@ autocmd BufWinEnter * NERDTreeMirror
 
 " Close tab when nerdtree only thing left
 autocmd BufEnter * if tabpagenr('$') > 1 && !len(filter(tabpagebuflist(), 'getbufvar(v:val,"&ft") != "nerdtree"')) | tabclose | endif
+
+" Use vim closetag on .hbs files
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.hbs'
