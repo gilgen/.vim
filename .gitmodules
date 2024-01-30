@@ -94,3 +94,6 @@
 [submodule "bundle/vim-terragrunt"]
 	path = bundle/vim-terragrunt
 	url = https://github.com/yorinasub17/vim-terragrunt.git
+[submodule "bundle/vim-terraform"]
+	path = bundle/vim-terraform
+	url = https://github.com/gilgen/vim-terraform
