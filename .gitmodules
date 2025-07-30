@@ -78,7 +78,7 @@
 	url = https://github.com/yorinasub17/vim-terragrunt.git
 [submodule "bundle/ale"]
 	path = bundle/ale
-	url = https://github.com/dense-analysis/ale
+	url = https://github.com/gilgen/ale
 [submodule "bundle/vim-terraform"]
 	path = bundle/vim-terraform
 	url = https://github.com/hashivim/vim-terraform

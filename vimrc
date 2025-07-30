@@ -292,11 +292,68 @@ autocmd BufRead,BufNewFile *.hbs set filetype=handlebars
 
 autocmd FileType handlebars NoMatchParen
 
+
+
+
+" let g:ale_linters = {
+" \   'html.handlebars': ['ember-template-lint'],
+" \   'ruby': ['rubocop_custom'],
+" \   'javascript': ['eslint'],
+" \   'typescript': ['eslint'],
+" \   'javascriptreact': ['eslint'],
+" \   'typescriptreact': ['eslint'],
+" \}
+
+" " Path to your wrapper
+" let g:ale_ruby_rubocop_executable = '/Users/jgilgen/projects/rubocop-clean-json'
+" 
+" let g:ale_linters = {
+" \   'html.handlebars': ['ember-template-lint'],
+" \   'ruby': ['rubocop_custom'],
+" \   'javascript': ['eslint'],
+" \   'typescript': ['eslint'],
+" \   'javascriptreact': ['eslint'],
+" \   'typescriptreact': ['eslint'],
+" \}
+" 
+" " Defer until Vim startup is complete (works better than User ALEInitialized with Pathogen)
+" augroup ALECustomRubocop
+"   autocmd!
+" 
+"   runtime ale/handlers/rubocop.vim
+"   
+"   autocmd VimEnter * call ale#linter#Define('ruby', {
+"   \   'name': 'rubocop_custom',
+"   \   'output_stream': 'stdout',
+"   \   'executable': g:ale_ruby_rubocop_executable,
+"   \   'command': g:ale_ruby_rubocop_executable . ' --format json --force-exclusion --stdin %s',
+"   \   'parse_output': function('ale#handlers#ruby#RubocopParse'),
+"   \   'severity': {
+"   \     'info': 'I',
+"   \     'convention': 'I',
+"   \     'refactor': 'I',
+"   \     'warning': 'W',
+"   \     'error': 'E',
+"   \     'fatal': 'E',
+"   \   }
+"   \ })
+" augroup END
+"
+"
+
+
+" let g:ale_ruby_rubocop_executable = '/Users/jgilgen/projects/rubocop-clean-json'
+
 let g:ale_linters = {
-\   'html.handlebars': ['ember-template-lint'],
 \   'ruby': ['rubocop'],
+\   'handlebars': ['ember-template-lint'],
 \   'javascript': ['eslint'],
 \   'typescript': ['eslint'],
 \   'javascriptreact': ['eslint'],
 \   'typescriptreact': ['eslint'],
 \}
+
+let g:ale_sign_error = 'E'
+let g:ale_sign_warning = 'W'
+let g:ale_sign_info = '.'
+" set signcolumn=yes
