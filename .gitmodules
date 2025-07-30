@@ -4,21 +4,12 @@
 [submodule "bundle/tcomment_vim"]
 	path = bundle/tcomment_vim
 	url = https://github.com/tomtom/tcomment_vim.git
-[submodule "bundle/vim-coffee-script"]
-	path = bundle/vim-coffee-script
-	url = https://github.com/kchmck/vim-coffee-script.git
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = git@github.com:scrooloose/nerdtree.git
 [submodule "bundle/vim-haml"]
 	path = bundle/vim-haml
 	url = https://github.com/tpope/vim-haml.git
-[submodule "bundle/vim-colors-solarized"]
-	path = bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "bundle/vim-colors-sunburst"]
-	path = bundle/vim-colors-sunburst
-	url = https://github.com/sickill/vim-sunburst.git
 [submodule "bundle/vim-autoclose"]
 	path = bundle/vim-autoclose
 	url = https://github.com/gilgen/vim-autoclose.git
@@ -70,15 +61,6 @@
 [submodule "bundle/powerline"]
 	path = bundle/powerline
 	url = git@github.com:powerline/powerline
-[submodule "bundle/dracula-theme"]
-	path = bundle/dracula-theme
-	url = git@github.com:dracula/vim.git
-[submodule "bundle/onehalf"]
-	path = bundle/onehalf
-	url = https://github.com/sonph/onehalf
-[submodule "bundle/atom-dark"]
-	path = bundle/atom-dark
-	url = https://github.com/gosukiwi/vim-atom-dark
 [submodule "bundle/vim-jsx"]
 	path = bundle/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
@@ -97,3 +79,6 @@
 [submodule "bundle/vim-terraform"]
 	path = bundle/vim-terraform
 	url = https://github.com/gilgen/vim-terraform
+[submodule "bundle/ale"]
+	path = bundle/ale
+	url = https://github.com/dense-analysis/ale

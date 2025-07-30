@@ -281,7 +281,22 @@ autocmd BufWinEnter * NERDTreeMirror
 " autocmd BufEnter * if tabpagenr('$') > 1 && !len(filter(tabpagebuflist(), 'getbufvar(v:val,"&ft") != "nerdtree"')) | tabclose | endif
 
 " Use vim closetag on .hbs files
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.hbs'
+" let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.hbs'
+
+" autocmd FileType html.handlebars set filetype=handlebars
 
 " Use the right comments for terraform files
 autocmd FileType terragrunt setlocal commentstring=#\ %s
+
+autocmd BufRead,BufNewFile *.hbs set filetype=handlebars
+
+autocmd FileType handlebars NoMatchParen
+
+let g:ale_linters = {
+\   'html.handlebars': ['ember-template-lint'],
+\   'ruby': ['rubocop'],
+\   'javascript': ['eslint'],
+\   'typescript': ['eslint'],
+\   'javascriptreact': ['eslint'],
+\   'typescriptreact': ['eslint'],
+\}
